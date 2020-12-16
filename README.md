@@ -37,3 +37,17 @@
         
         11.iris使用一二三(todo)
         
+        
+### idea 配置 
+#### gopath
+![gopath](pic/lhb1.png)
+#### go module
+![gomodule](pic/lhb2.png)
+
+### 问题 
+1. main redeclared in this block问题的排查与解决
+由于一个包下不能有多个main方法，所以执行go test 一直失败，
+最后只能新建一个包解决grammar-test，一开始都在grammar下面
+
+2. cannot find module providing package go_code/grammar/model 
+由于这个./golang/grammar/factory.go倒入了一个错误包路径，导致我排查了好几天，go的错误提示太坑了，提示能不能直接定位到文件啊。导致我这个菜鸟以为我配置有问题。

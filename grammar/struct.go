@@ -4,29 +4,6 @@
 //面向对象编程=>面向接口编程
 package main
 
-type User struct {
-	Name   string
-	Age    int
-	Gender string
-	Score  [3]int
-}
-
-type Cat struct {
-	Name     string
-	Color    string
-	Age      int
-	Behavior string
-}
-type Struct struct {
-	Per    *int
-	Name   string
-	Age    int
-	Score  [] float64
-	Hobby  [3] float64
-	Friend map[string]string
-}
-
-
 func main() {
 	//user := User{
 	//	Name:"Leslie",
@@ -91,10 +68,7 @@ func main() {
 	//var person *User = &User{"Leslie",19,"male",[3]int{1,2,3}}
 	//fmt.Println(person)
 
-
 }
-
-
 
 //test()和UserController绑定
 //test()只能由UserController类型的变量调用
