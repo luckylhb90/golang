@@ -1,5 +1,5 @@
 //golang文件操作练习记录
-package grammar
+package grammar_test
 
 import (
 	"bufio"

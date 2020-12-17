@@ -3,22 +3,14 @@ package main
 
 import (
 	"encoding/json"
-	"log"
 	"fmt"
+	"github.com/luckylhb90/golang/grammar/model"
+	"log"
 )
-
-//反序列化
-//将json反序列化成切片，map,struct
-type JsonDeserialize struct {
-	Name     string
-	Age      int
-	Birthday string
-	Skill    string
-}
 
 func testDeserializeStruct() {
 	jsonStr := "{\"Name\":\"liming\",\"Age\":18,\"Birthday\":\"2019-02-28\",\"Skill\":\"Coding\"}"
-	var jsonDe JsonDeserialize
+	var jsonDe model.JsonDeserialize
 	err := json.Unmarshal([]byte(jsonStr), &jsonDe)
 	if err != nil {
 		log.Fatal(err)
@@ -28,7 +20,7 @@ func testDeserializeStruct() {
 func testDeserializeSlice() {
 	jsonStr := "[{\"Name\":\"liming\",\"Age\":18,\"Birthday\":\"2019-02-28\",\"Skill\":\"Coding\"}," +
 		"{\"Name\":\"leslie\",\"Age\":27,\"Birthday\":\"1999-08-19\",\"Skill\":\"Eating\"}]"
-	var a [] map[string]interface{}
+	var a []map[string]interface{}
 	err := json.Unmarshal([]byte(jsonStr), &a)
 	if err != nil {
 		log.Fatal(err)

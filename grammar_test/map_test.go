@@ -1,10 +1,30 @@
 //map引用类型
-package grammar
+package grammar_test
 
 import (
 	"fmt"
 	"testing"
 )
+
+func mapFunc(m map[string]interface{}) {
+	m = make(map[string]interface{})
+	m["abc"] = "123"
+}
+
+func mapPtrFunc(mp *map[string]interface{}) {
+	m := make(map[string]interface{})
+	m["abc"] = "123"
+
+	*mp = m
+}
+
+func Test_map_0(t *testing.T) {
+	var m1, m2 map[string]interface{}
+	mapFunc(m1)
+	mapPtrFunc(&m2)
+
+	fmt.Printf("%+v, %+v\n", m1, m2)
+}
 
 func Test_map_1(t *testing.T) {
 	var test map[string]string

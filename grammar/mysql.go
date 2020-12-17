@@ -16,7 +16,7 @@ var slice []Data
 
 //golang操作mysql实现curd基础操作
 func main() {
-	db, error := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/pu_localhost?charset=utf8")
+	db, error := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/test?charset=utf8")
 	if error != nil {
 		log.Fatal(error)
 	}

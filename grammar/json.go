@@ -3,19 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/luckylhb90/golang/grammar/model"
 	"log"
 )
 
-type jsonSerilize struct {
-	//使用tag设置别名，反射机制
-	Name     string `json:"mingzi"`
-	Age      int
-	Birthday string
-	Skill    string
-}
 //序列化结构体
 func testStruct() {
-	m := jsonSerilize{
+	m := model.JsonSerilize{
 		Name:     "dasd",
 		Age:      18,
 		Birthday: "2001-02-03",
@@ -27,6 +21,7 @@ func testStruct() {
 	}
 	fmt.Println(string(jsonText))
 }
+
 //序列化map
 func testMap() {
 	var a map[string]interface{}
@@ -42,6 +37,7 @@ func testMap() {
 	}
 	fmt.Println(string(jsonString))
 }
+
 //序列化切片
 func testSlice() {
 	var b []map[string]interface{}
